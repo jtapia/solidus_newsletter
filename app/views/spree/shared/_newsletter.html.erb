@@ -2,7 +2,7 @@
   <h2 class='newsletter-section__title'><%= SolidusNewsletter::Config[:title].html_safe %></h2>
 
   <div class='newsletter-section__content row'>
-    <%= form_for :newsletter, url: newsletters_path, method: :post do |f| %>
+    <%= form_for :newsletters, url: newsletters_path, method: :post do |f| %>
       <div class='field text col-md-3 col-sm-12 text-center'>
         <p><%= SolidusNewsletter::Config[:text].html_safe %></p>
       </div>

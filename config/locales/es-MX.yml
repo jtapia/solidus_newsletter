@@ -12,8 +12,9 @@ es-MX:
   spree:
     newsletter:
       controller:
-        sucess: Gracias por suscribirte a nuestro newsletter
-        error: Hubo un problem, por favor intenta otra vez
+        success: Gracias por suscribirte a nuestro newsletter
+        error: Hubo un problema, por favor intenta otra vez
+        already_registered: Ya estas actualmente registrado
       admin:
         success: El texto del newsletter a sido actualizado correctamente
         error: El texto del newsletter no se a podido actualizar, intente más tarde
