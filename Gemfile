@@ -1,24 +1,30 @@
 source 'https://rubygems.org'
 
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
+
 branch = ENV.fetch('SOLIDUS_BRANCH', 'master')
-gem 'solidus', github: 'solidusio/solidus', branch: branch
-gem 'solidus_i18n', github: 'solidusio-contrib/solidus_i18n'
+gem "solidus", github: 'solidusio/solidus', branch: branch
 
 if branch == 'master' || branch >= 'v2.3'
-  gem 'rails', '~> 5.1.0'
+  gem 'rails', '~> 5.1.4'
 elsif branch >= 'v2.0'
-  gem 'rails', '~> 5.0.0'
-  gem 'rails-controller-testing', group: :test
-else
-  gem 'rails', '~> 4.2.0'
-  gem 'rails_test_params_backport', group: :test
+  gem 'rails', '~> 5.0.6'
 end
 
 gem 'pg', '~> 0.21'
 gem 'sqlite3'
 gem 'mysql2'
 
+group :test do
+  if branch == 'master' || branch >= 'v2.0'
+    gem 'rails-controller-testing'
+  else
+    gem 'rails_test_params_backport'
+  end
+end
+
 group :development, :test do
+  gem 'pry-rails'
   gem 'i18n-tasks', '~> 0.9' if branch == 'master'
 end
 

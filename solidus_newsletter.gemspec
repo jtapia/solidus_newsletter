@@ -19,10 +19,8 @@ Gem::Specification.new do |s|
   s.require_path  = 'lib'
   s.requirements << 'none'
 
-  solidus_version = ['>= 1.2', '< 3']
+  solidus_version = ['>= 1.0', '< 3']
   s.add_dependency 'solidus_core', solidus_version
-  s.add_dependency 'solidus_backend', solidus_version
-  s.add_dependency 'solidus_api', solidus_version
   s.add_dependency 'solidus_support'
 
   s.add_development_dependency 'database_cleaner', '~> 1.6'
