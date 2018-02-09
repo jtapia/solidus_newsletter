@@ -1,0 +1,47 @@
+<% if SolidusSupport.solidus_gem_version < Gem::Version.new('2.4.x') %>
+  <div class='alpha six columns'>
+    <fieldset class='no-border-bottom'>
+     <div class='field'>
+        <%= f.field_container :title do %>
+          <%= f.label Spree.t(:'newsletter.title') %>
+          <%= f.text_field :title, class: 'fullwidth', value: SolidusNewsletter::Config[:title] %>
+          <%= f.error_message_on :title %>
+        <% end %>
+      </div>
+
+      <div class='field'>
+        <%= f.field_container :text do %>
+          <%= f.label Spree.t(:'newsletter.form.text') %>
+          <%= f.text_field :text, class: 'fullwidth', value: SolidusNewsletter::Config[:text] %>
+          <%= f.error_message_on :text %>
+        <% end %>
+      </div>
+    </fieldset>
+  </div>
+<% else %>
+  <div class='row'>
+    <div class='col-md-6'>
+      <fieldset class='currency no-border-bottom'>
+        <div class='field'>
+          <%= f.field_container :title do %>
+            <%= f.label Spree.t(:'newsletter.form.title')  %>
+            <%= f.text_field :title, class: 'fullwidth', value: SolidusNewsletter::Config[:title] %>
+            <%= f.error_message_on :title %>
+          <% end %>
+        </div>
+      </fieldset>
+    </div>
+
+     <div class='col-md-6'>
+      <fieldset class='currency no-border-bottom'>
+        <div class='field'>
+          <%= f.field_container :text do %>
+            <%= f.label Spree.t(:'newsletter.form.text') %>
+            <%= f.text_field :text, class: 'fullwidth', value: SolidusNewsletter::Config[:text] %>
+            <%= f.error_message_on :text %>
+          <% end %>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+<% end %>

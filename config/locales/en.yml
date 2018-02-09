@@ -1,0 +1,30 @@
+en:
+  activerecord:
+    attributes:
+      spree/newsletter:
+        name: Name
+        email: Email
+        text: Text
+    models:
+      spree/newsletter:
+        one: Newsletter
+        other: Newsletters
+
+  spree:
+    newsletter:
+      controller:
+        sucess: Thank you to subscribe to our newsletter
+        error: Something went wrong, please try again
+      admin:
+        success: The newsletter was updated successfuly!
+        error: Something went wrong, please try again
+      form:
+        title: Title
+        text: Text
+        name: Name
+        email: Email
+        button: Send
+      admin_breadcrumb: Newsletter
+      config_name: "Newsletter"
+      config_description: "Manage Spree Newsletter contents"
+      title: "Newsletter"

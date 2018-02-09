@@ -1,0 +1,23 @@
+<section class='newsletter-section'>
+  <h2 class='newsletter-section__title'><%= SolidusNewsletter::Config[:title] %></h2>
+
+  <div class='newsletter-section__content row'>
+    <%= form_for :newsletter, url: newsletters_update_path, method: :post do |f| %>
+      <div class='field text col-md-3 col-sm-12 text-center'>
+        <p><%= SolidusNewsletter::Config[:text] %></p>
+      </div>
+
+      <div class='field col-md-3 col-sm-6' id=<%= 'name' %>>
+        <%= f.text_field :name, class: 'required fullwidth', autofocus: true, placeholder: Spree.t(:'newsletter.form.name') %>
+      </div>
+
+      <div class='field col-md-3 col-sm-6' id=<%= 'email' %>>
+        <%= f.email_field :email, class: 'required fullwidth', placeholder: Spree.t(:'newsletter.form.email') %>
+      </div>
+
+      <div class='col-md-3  col-sm-6 form-buttons'>
+        <%= f.submit Spree.t(:'newsletter.form.button'), class: 'newsletter-btn border-rounded small-text' %>
+      </div>
+    <% end %>
+  </div>
+</section>

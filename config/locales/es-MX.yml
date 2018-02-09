@@ -1,0 +1,29 @@
+es-MX:
+  activerecord:
+    attributes:
+      name: Nombre
+      email: Email
+      text: Texto
+    models:
+      spree/newsletter:
+        one: Newsletter
+        other: Newsletters
+
+  spree:
+    newsletter:
+      controller:
+        sucess: Gracias por suscribirte a nuestro newsletter
+        error: Hubo un problem, por favor intenta otra vez
+      admin:
+        success: El texto del newsletter a sido actualizado correctamente
+        error: El texto del newsletter no se a podido actualizar, intente más tarde
+      form:
+        title: Titulo
+        text: Texto
+        name: Nombre
+        email: Correo Electronico
+        button: Enviar
+      admin_breadcrumb: Newsletter
+      config_name: Newsletter
+      config_description: Manage Spree Newsletter contents
+      title: Newsletter

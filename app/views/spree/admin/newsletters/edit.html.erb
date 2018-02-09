@@ -1,0 +1,12 @@
+<%= render 'spree/admin/shared/general_tabs' %>
+
+<% admin_breadcrumb(link_to(Spree.t(:'newsletter.admin_breadcrumb'), edit_admin_general_settings_path)) %>
+
+<%= form_for :newsletters, url: admin_newsletters_update_path, method: :put do |f| %>
+  <fieldset class='no-border-top'>
+    <%= render 'form', f: f %>
+    <%= render 'spree/admin/shared/edit_resource_links', collection_url: edit_admin_general_settings_url %>
+  </fieldset>
+<% end %>
+
+
