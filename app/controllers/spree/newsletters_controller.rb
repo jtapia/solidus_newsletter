@@ -9,7 +9,7 @@ module Spree
         flash[:error] = Spree.t(:'newsletter.controller.error')
       end
 
-      redirect_to admin_newsletters_edit_path
+      redirect_to root_path
     end
 
     private
