@@ -1,8 +1,10 @@
 require 'spec_helper'
 
 describe Spree::NewslettersController, type: :controller do
+  let(:newsletter) { create(:newsletter) }
+
   context '#create' do
-    it 'returns true' do
+    it 'returns true new object' do
       post :create, params: { newsletters: { name: 'User Test', email: 'user@test.com' } }
 
       expect(response.status).to eq(302)
@@ -14,6 +16,13 @@ describe Spree::NewslettersController, type: :controller do
 
       expect(response.status).to eq(302)
       expect(flash[:error]).to include(Spree.t('newsletter.controller.error'))
+    end
+
+    it 'returns already added' do
+      post :create, params: { newsletters: { name: newsletter.name, email: newsletter.email } }
+
+      expect(response.status).to eq(302)
+      expect(flash[:notice]).to include(Spree.t('newsletter.controller.already_subscribed'))
     end
   end
 end

@@ -1,9 +1,10 @@
 es-MX:
   activerecord:
     attributes:
-      name: Nombre
-      email: Email
-      text: Texto
+      spree/newsletter:
+        name: Nombre
+        email: Email
+        text: Texto
     models:
       spree/newsletter:
         one: Newsletter
@@ -14,7 +15,7 @@ es-MX:
       controller:
         success: Gracias por suscribirte a nuestro newsletter
         error: Hubo un problema, por favor intenta otra vez
-        already_registered: Ya estas actualmente registrado
+        already_subscribed: Ya estas actualmente registrado
       admin:
         success: El texto del newsletter a sido actualizado correctamente
         error: El texto del newsletter no se a podido actualizar, intente más tarde

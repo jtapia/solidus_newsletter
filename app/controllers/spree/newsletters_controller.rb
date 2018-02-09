@@ -1,12 +1,16 @@
 module Spree
   class NewslettersController < StoreController
     def create
-      @newsletter = Spree::Newsletter.new(newsletter_params)
+      @newsletter = Spree::Newsletter.find_or_initialize_by(newsletter_params)
 
-      if @newsletter.save
-        flash[:success] = Spree.t(:'newsletter.controller.success')
+      if @newsletter.persisted?
+        flash[:notice] = Spree.t(:'newsletter.controller.already_subscribed')
       else
-        flash[:error] = Spree.t(:'newsletter.controller.error')
+        if @newsletter.save
+          flash[:success] = Spree.t(:'newsletter.controller.success')
+        else
+          flash[:error] = Spree.t(:'newsletter.controller.error')
+        end
       end
 
       redirect_to root_path

@@ -15,7 +15,7 @@ en:
       controller:
         success: Thank you to subscribe to our newsletter
         error: Something went wrong, please try again
-        already_registered: You're already registered
+        already_subscribed: You're already registered
       admin:
         success: The newsletter was updated successfuly!
         error: Something went wrong, please try again

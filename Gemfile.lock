@@ -1,7 +1,6 @@
 GIT
   remote: git://github.com/solidusio-contrib/solidus_i18n.git
   revision: 67b61b2ca4aa01e0cce3d512dffbbc9a15fe9a1a
-  branch: master
   specs:
     solidus_i18n (1.2.0)
       deface (~> 1.0)
