@@ -23,7 +23,7 @@ es-MX:
         title: Titulo
         text: Texto
         name: Nombre
-        email: Correo Electronico
+        email: Correo Electrónico
         button: Enviar
       admin_breadcrumb: Newsletter
       config_name: Newsletter
