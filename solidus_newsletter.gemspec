@@ -14,8 +14,8 @@ Gem::Specification.new do |s|
   s.summary     = 'Solidus Newsletter extension'
   s.description = 'Adds a newsletter form to the homepage'
 
-  # s.files = Dir['{app,config,models,db,lib}/**/*'] + %w(MIT-LICENSE Rakefile README.md)
   s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- spec/*`.split("\n")
   s.require_path  = 'lib'
   s.requirements << 'none'
 
@@ -24,12 +24,17 @@ Gem::Specification.new do |s|
   s.add_dependency 'solidus_support'
 
   s.add_development_dependency 'database_cleaner', '~> 1.6'
+  s.add_development_dependency 'byebug'
+  s.add_development_dependency 'capybara', '~> 2.4'
   s.add_development_dependency 'factory_bot', '~> 4.4'
   s.add_development_dependency 'ffaker'
+  s.add_development_dependency 'i18n-tasks'
+  s.add_development_dependency 'poltergeist', '~> 1.6.0'
+  s.add_development_dependency 'pry-rails'
   s.add_development_dependency 'rspec-rails', '~> 3.3'
-  s.add_development_dependency 'simplecov', '~> 0.14'
   s.add_development_dependency 'rspec-activemodel-mocks'
+  s.add_development_dependency 'rubocop'
+  s.add_development_dependency 'simplecov', '~> 0.14'
   s.add_development_dependency 'webmock'
-  s.add_development_dependency 'byebug'
 end
 
