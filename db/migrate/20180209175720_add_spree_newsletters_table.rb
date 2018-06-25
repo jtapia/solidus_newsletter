@@ -4,7 +4,7 @@ class AddSpreeNewslettersTable < SolidusSupport::Migration[4.2]
       t.string :name
       t.string :email
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
