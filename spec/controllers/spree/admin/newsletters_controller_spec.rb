@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe Spree::Admin::NewslettersController, type: :controller do
+RSpec.describe Spree::Admin::NewslettersController, type: :controller do
   stub_authorization!
 
   before do

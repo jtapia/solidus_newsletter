@@ -1,5 +1,7 @@
 <section class='newsletter-section'>
-  <h2 class='newsletter-section__title'><%= SolidusNewsletter::Config[:title].html_safe %></h2>
+  <h2 class='newsletter-section__title'>
+    <%= SolidusNewsletter::Config[:title].html_safe %>
+  </h2>
 
   <div class='newsletter-section__content row'>
     <%= form_for :newsletters, url: newsletters_path, method: :post do |f| %>
@@ -8,15 +10,20 @@
       </div>
 
       <div class='field col-md-3 col-sm-6' id=<%= 'name' %>>
-        <%= f.text_field :name, class: 'required fullwidth', placeholder: Spree.t(:'newsletter.form.name') %>
+        <%= f.text_field :name,
+                         class: 'required fullwidth',
+                         placeholder: I18n.t('spree.newsletter.form.name') %>
       </div>
 
       <div class='field col-md-3 col-sm-6' id=<%= 'email' %>>
-        <%= f.email_field :email, class: 'required fullwidth', placeholder: Spree.t(:'newsletter.form.email') %>
+        <%= f.email_field :email,
+                          class: 'required fullwidth',
+                          placeholder: I18n.t('spree.newsletter.form.email') %>
       </div>
 
       <div class='col-md-3  col-sm-6 form-buttons'>
-        <%= f.submit Spree.t(:'newsletter.form.button'), class: 'newsletter-btn border-rounded small-text' %>
+        <%= f.submit I18n.t('spree.newsletter.form.button'),
+                     class: 'newsletter-btn border-rounded small-text' %>
       </div>
     <% end %>
   </div>

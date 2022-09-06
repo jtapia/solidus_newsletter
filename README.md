@@ -1,5 +1,6 @@
-# Solidus Newsletter
-[![Build Status](https://travis-ci.org/jtapia/solidus_newsletter.svg?branch=master)](https://travis-ci.org/jtapia/solidus_newsletter)<br />
+SolidusNewsletter
+=================
+[![CircleCI](https://circleci.com/gh/jtapia/solidus_newsletter.svg?style=shield)](https://circleci.com/gh/jtapia/solidus_newsletter)
 
 Basic Overview
 -----

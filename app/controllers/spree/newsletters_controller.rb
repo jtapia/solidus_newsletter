@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 module Spree
   class NewslettersController < StoreController
     def create
       @newsletter = Spree::Newsletter.find_or_initialize_by(newsletter_params)
 
       if @newsletter.persisted?
-        flash[:notice] = Spree.t(:'newsletter.controller.already_subscribed')
+        flash[:notice] = I18n.t('spree.newsletter.controller.already_subscribed')
       else
         if @newsletter.save
-          flash[:success] = Spree.t(:'newsletter.controller.success')
+          flash[:success] = I18n.t('spree.newsletter.controller.success')
         else
-          flash[:error] = Spree.t(:'newsletter.controller.error')
+          flash[:error] = I18n.t('spree.newsletter.controller.error')
         end
       end
 
