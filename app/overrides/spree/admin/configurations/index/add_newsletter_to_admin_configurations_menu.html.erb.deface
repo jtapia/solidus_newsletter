@@ -1,6 +1,6 @@
 <!-- insert_bottom "[data-hook='admin_configurations_menu']" -->
 
 <tr>
-  <td><%= link_to Spree.t('newsletter.config_name'), admin_newsletters_edit_path %></td>
-  <td><%= Spree.t('newsletter.config_description') %></td>
+  <td><%= link_to I18n.t('spree.newsletter.config_name'), admin_newsletters_edit_path %></td>
+  <td><%= I18n.t('spree.newsletter.config_description') %></td>
 </tr>

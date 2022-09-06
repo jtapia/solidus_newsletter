@@ -3,7 +3,7 @@
     <fieldset class='no-border-bottom'>
      <div class='field'>
         <%= f.field_container :title do %>
-          <%= f.label Spree.t(:'newsletter.title') %>
+          <%= f.label I18n.t('spree.newsletter.title') %>
           <%= f.text_field :title, class: 'fullwidth', value: SolidusNewsletter::Config[:title] %>
           <%= f.error_message_on :title %>
         <% end %>
@@ -11,7 +11,7 @@
 
       <div class='field'>
         <%= f.field_container :text do %>
-          <%= f.label Spree.t(:'newsletter.form.text') %>
+          <%= f.label I18n.t('spree.newsletter.form.text') %>
           <%= f.text_field :text, class: 'fullwidth', value: SolidusNewsletter::Config[:text] %>
           <%= f.error_message_on :text %>
         <% end %>
@@ -24,7 +24,7 @@
       <fieldset class='currency no-border-bottom'>
         <div class='field'>
           <%= f.field_container :title do %>
-            <%= f.label Spree.t(:'newsletter.form.title')  %>
+            <%= f.label I18n.t('spree.newsletter.form.title')  %>
             <%= f.text_field :title, class: 'fullwidth', value: SolidusNewsletter::Config[:title] %>
             <%= f.error_message_on :title %>
           <% end %>
@@ -36,7 +36,7 @@
       <fieldset class='currency no-border-bottom'>
         <div class='field'>
           <%= f.field_container :text do %>
-            <%= f.label Spree.t(:'newsletter.form.text') %>
+            <%= f.label I18n.t('spree.newsletter.form.text') %>
             <%= f.text_field :text, class: 'fullwidth', value: SolidusNewsletter::Config[:text] %>
             <%= f.error_message_on :text %>
           <% end %>

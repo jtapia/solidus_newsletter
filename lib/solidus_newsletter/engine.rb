@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module SolidusNewsletter
   class Engine < Rails::Engine
-    require 'spree/core'
-    isolate_namespace Spree
-    engine_name 'solidus_newsletter'
+    include SolidusSupport::EngineExtensions
 
-    config.autoload_paths += %W(#{config.root}/lib)
+    isolate_namespace ::Spree
+
+    engine_name 'solidus_newsletter'
 
     # use rspec for tests
     config.generators do |g|
@@ -15,12 +17,12 @@ module SolidusNewsletter
       SolidusNewsletter::Config = SolidusNewsletter::Configuration.new
     end
 
-    def self.activate
-      Dir.glob(File.join(File.dirname(__FILE__), "../../app/**/*_decorator*.rb")) do |c|
-        Rails.configuration.cache_classes ? require(c) : load(c)
-      end
-    end
+    # def self.activate
+    #   Dir.glob(File.join(File.dirname(__FILE__), "../../app/**/*_decorator*.rb")) do |c|
+    #     Rails.configuration.cache_classes ? require(c) : load(c)
+    #   end
+    # end
 
-    config.to_prepare &method(:activate).to_proc
+    # config.to_prepare &method(:activate).to_proc
   end
 end

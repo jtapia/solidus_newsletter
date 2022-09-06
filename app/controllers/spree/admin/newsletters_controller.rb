@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Spree
   module Admin
     class NewslettersController < Spree::Admin::BaseController
@@ -7,9 +9,9 @@ module Spree
 
         if (title == newsletter_params[:title] && text == newsletter_params[:text]) &&
             (newsletter_params[:title].present? && newsletter_params[:text])
-          flash[:success] = Spree.t(:'newsletter.admin.success')
+          flash[:success] = I18n.t('spree.newsletter.admin.success')
         else
-          flash[:error] = Spree.t(:'newsletter.admin.error')
+          flash[:error] = I18n.t('spree.newsletter.admin.error')
         end
 
         redirect_to admin_newsletters_edit_path

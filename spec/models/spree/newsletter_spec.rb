@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
-describe Spree::Newsletter, type: :model do
+RSpec.describe Spree::Newsletter, type: :model do
   context 'validations' do
     it 'validates by default' do
       expect(build(:newsletter, name: 'User Test', email: 'user@test.com')).to be_valid
