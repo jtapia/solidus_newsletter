@@ -5,7 +5,7 @@ SolidusNewsletter
 Basic Overview
 -----
 
-Add a newsletter to the homepage of your Solidus site, and manage the newsletter content on the Admin panel.
+Add a newsletter to the homepage of your Solidus site, and manage the newsletter consent on the Admin panel.
 
 Setup
 -----
